@@ -1,0 +1,23 @@
+{
+    "code class adapter": {
+		"prefix": "adapterClass",
+		"body": [
+		  "class ${1:Name}Adapter extends TypeAdapter<${1:Name}> {",
+		  "  @override",
+		  "  final typeId = ${2:Id};",
+		  "",
+		  "  @override",
+		  "  User read(BinaryReader reader) {",
+		  "    final property = reader.readString(); // (String property)",
+		  "    return ${1:Name}(property);",
+		  "  }",
+		  "",
+		  "  @override",
+		  "  void write(BinaryWriter writer, ${1:Name} obj) {",
+		  "    writer.writeString(obj.property);",
+		  "  }",
+		  "}"
+		],
+		"description": "class adapter"
+	  }
+}
